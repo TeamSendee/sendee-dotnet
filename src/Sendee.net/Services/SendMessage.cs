@@ -25,13 +25,22 @@ namespace Sendee.net.Services
         {
             try
             {
+                SmsMessage smsMessage = new SmsMessage();
+                smsMessage.from = from;
+                smsMessage.body = body;
+                smsMessage.to = to;
 
-                SMSMessage smsMessage = new SMSMessage();
-                smsMessage.From = from;
-                smsMessage.Body = body;
-                smsMessage.To = to;
+                string json = JsonConvert.SerializeObject(smsMessage);
+                var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
 
-                return await SendRequest(smsMessage, "sms/send");
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(_baseUrl);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+
+                var response = await client.PostAsync("sms/send", content);
+
+                return await response.Content.ReadAsStringAsync();
                 
             }
             catch (Exception ex)
@@ -44,16 +53,26 @@ namespace Sendee.net.Services
             }
         }
 
-        public async Task<string> SendBulk(string to, string from, string body)
+        public async Task<string> SendBulk(List<string> to, string from, string body)
         {
             try
             {
-                SMSMessage smsMessage = new SMSMessage();
-                smsMessage.From = from;
-                smsMessage.Body = body;
-                smsMessage.To = to;
+                BulkSmsMessage bulkSmsMessage = new BulkSmsMessage();
+                bulkSmsMessage.from = from;
+                bulkSmsMessage.body = body;
+                bulkSmsMessage.to = to;
 
-                return await SendRequest(smsMessage, "sms/bulk/send");
+                string json = JsonConvert.SerializeObject(bulkSmsMessage);
+                var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
+
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri(_baseUrl);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+
+                var response = await client.PostAsync("sms/bulk/send", content);
+
+                return await response.Content.ReadAsStringAsync();
             }
             catch (Exception ex)
             {
@@ -63,21 +82,6 @@ namespace Sendee.net.Services
 
                 return JsonConvert.SerializeObject(errors);
             }
-        }
-
-        public async Task<string> SendRequest(SMSMessage request, string url)
-        {
-            string json = JsonConvert.SerializeObject(request);
-            var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
-
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(_baseUrl);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
-
-
-            var response = await client.PostAsync(url, content);
-
-            return await response.Content.ReadAsStringAsync();
         }
     }
 }

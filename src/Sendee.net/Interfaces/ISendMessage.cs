@@ -10,7 +10,6 @@ namespace Sendee.net.Interfaces
     public interface ISendMessage
     {
         Task<string> SendSingle(string to, string from, string body);
-        Task<string> SendBulk(string to, string from, string body);
-        Task<string> SendRequest(SMSMessage request, string url)
+        Task<string> SendBulk(List<string> to, string from, string body);
     }
 }
