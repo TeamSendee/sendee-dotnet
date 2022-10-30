@@ -11,6 +11,8 @@
     <PackageProjectUrl>https://github.com/TeamSendee/sendee-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TeamSendee/sendee-dotnet</RepositoryUrl>
     <PackageTags>sendee;api;rest;twilio;sms;text</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
