@@ -21,7 +21,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       working-directory: src/Sendee.net
     - name: Publish Sendee.net
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: brandedoutcast/publish-nuget@v2.5.3
       with:
           PROJECT_FILE_PATH: src/Sendee.net/Sendee.net.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
