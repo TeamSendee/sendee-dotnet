@@ -20,8 +20,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
       working-directory: src/Sendee.net
-    - name: Publish Sendee.net
-      uses: alirezanet/publish-nuget@v3.0.4
-      with:
-          PROJECT_FILE_PATH: src/Sendee.net/Sendee.net.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: Package
+      run: dotnet pack -c Release -o . src/Sendee.net/Sendee.net.csproj
+    - name: Publish
+      run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
