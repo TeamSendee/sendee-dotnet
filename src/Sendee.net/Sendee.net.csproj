@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Authors>$(AssemblyName)</Authors>
+    <Company>Sendee</Company>
+    <Description>A REST API helper for Sendee</Description>
+    <Copyright>Copyright @ sendee</Copyright>
+    <PackageProjectUrl>https://github.com/TeamSendee/sendee-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TeamSendee/sendee-dotnet</RepositoryUrl>
+    <PackageTags>sendee;api;rest;twilio;sms;text</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
