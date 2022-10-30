@@ -19,6 +19,7 @@ jobs:
       working-directory: src/Sendee.net
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      working-directory: src/Sendee.net
     - name: Publish Sendee.net
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
