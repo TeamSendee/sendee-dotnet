@@ -16,6 +16,7 @@ jobs:
         dotnet-version: 6.0
     - name: Install dependencies
       run: dotnet restore
+      working-directory: src/Sendee.net
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish Sendee.net
