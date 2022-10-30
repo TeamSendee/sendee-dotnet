@@ -23,7 +23,7 @@ namespace Sendee.net
             return response;
         }
 
-        public async Task<string> SendBulkMessage(string to, string from, string body)
+        public async Task<string> SendBulkMessage(List<string> to, string from, string body)
         {
             SendMessage sendMessage = new SendMessage(_apiKey);
             string response = await sendMessage.SendBulk(to, from, body);

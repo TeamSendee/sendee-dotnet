@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1703.6
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendee.net", "Sendee.net\Sendee.net.csproj", "{0E767291-FBAC-4D27-A4DE-35E3E4F7137E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sendee.net", "Sendee.net\Sendee.net.csproj", "{BC6AB202-D665-4E18-93D2-58160E513EB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0E767291-FBAC-4D27-A4DE-35E3E4F7137E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E767291-FBAC-4D27-A4DE-35E3E4F7137E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E767291-FBAC-4D27-A4DE-35E3E4F7137E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E767291-FBAC-4D27-A4DE-35E3E4F7137E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6AB202-D665-4E18-93D2-58160E513EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6AB202-D665-4E18-93D2-58160E513EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6AB202-D665-4E18-93D2-58160E513EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6AB202-D665-4E18-93D2-58160E513EB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
